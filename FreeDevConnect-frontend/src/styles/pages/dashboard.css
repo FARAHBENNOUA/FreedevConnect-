@@ -1,0 +1,208 @@
+.dashboard-page {
+    padding: 2rem 0;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  
+  .dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .stat-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+  
+  .stat-label {
+    color: var(--text-light);
+  }
+  
+  .dashboard-section {
+    margin-bottom: 3rem;
+  }
+  
+  .dashboard-section h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  .projects-list, .applications-list {
+    display: grid;
+    gap: 1.5rem;
+  }
+  
+  .project-card, .application-card {
+    padding: 1.5rem;
+  }
+  
+  .project-header, .application-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .project-header h3, .application-header h3 {
+    margin: 0;
+  }
+  
+  .status-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .status-active, .status-in_progress {
+    background-color: #e3f2fd;
+    color: #1976d2;
+  }
+  
+  .status-completed {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .status-pending {
+    background-color: #fff8e1;
+    color: #f57f17;
+  }
+  
+  .status-accepted {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+  }
+  
+  .status-rejected {
+    background-color: #ffebee;
+    color: #c62828;
+  }
+  
+  .project-details, .application-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .project-info, .application-info {
+    flex: 1;
+  }
+  
+  .project-info p, .application-info p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .project-applications, .project-actions, .application-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+  }
+  
+  .empty-state {
+    text-align: center;
+    padding: 3rem;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+  }
+  
+  .empty-state p {
+    margin-bottom: 1.5rem;
+    color: var(--text-light);
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-stats {
+      grid-template-columns: 1fr;
+    }
+  
+    .dashboard-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+  
+    .project-details, .application-details {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .project-applications, .project-actions, .application-actions {
+      align-items: flex-start;
+    }
+    .quick-actions-card {
+  margin-bottom: 2rem;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.action-item {
+  text-align: center;
+  padding: 1.5rem;
+  border: 2px dashed #e0e0e0;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.action-item:hover {
+  border-color: #3498db;
+}
+
+.action-item h3 {
+  margin: 0 0 0.5rem 0;
+  color: #2c3e50;
+}
+
+.action-item p {
+  margin: 0 0 1rem 0;
+  color: #666;
+}
+  }.dashboard-redirect-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  color: var(--text-light);
+}
+
+.dashboard-redirect-loading .spinner {
+  width: 2rem;
+  height: 2rem;
+  border: 3px solid #ccc;
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+

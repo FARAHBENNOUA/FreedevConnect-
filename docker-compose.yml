@@ -1,0 +1,89 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: freedevconnect_mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: freedevconnect
+      MYSQL_USER: freedevuser
+      MYSQL_PASSWORD: freedevpass
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - freedevconnect_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: ./freedevconnect
+      dockerfile: Dockerfile
+    container_name: freedevconnect_backend
+    restart: always
+    ports:
+      - "8889:8889"
+    environment:
+      PORT: 8889
+      NODE_ENV: development
+      JWT_SECRET: ROOT
+      DB_HOST: mysql
+      DB_USER: freedevuser
+      DB_PASSWORD: freedevpass
+      DB_NAME: freedevconnect
+      DB_PORT: 3306
+      CLOUDINARY_CLOUD_NAME: dm5kmjljw
+      CLOUDINARY_API_KEY: 257975613956569
+      CLOUDINARY_API_SECRET: mP4J6C3iA9rrLuPApYQCtbU5IqE
+      CLOUDINARY_URL: cloudinary://257975613956569:mP4J6C3iA9rrLuPApYQCtbU5IqE@dm5kmjljw
+      EMAIL_USER: bennouafarah@gmail.com
+      EMAIL_PASSWORD: fcdt gwgp vugw qrcv
+      CORS_ORIGIN: http://localhost:3000
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - freedevconnect_network
+    volumes:
+      - ./freedevconnect:/app
+    command: sh -c "sleep 10 && npm run dev"
+
+  frontend:
+    build:
+      context: ./freedevconnect-frontend
+      dockerfile: Dockerfile.frontend
+    container_name: freedevconnect_frontend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_BACKEND_URL: http://backend:8889
+      REACT_APP_API_URL: http://backend:8889/api
+      REACT_APP_NAME: FreeDevConnect
+      REACT_APP_VERSION: 0.1.0
+      REACT_APP_UPLOAD_URL: http://backend:8889/uploads
+      REACT_APP_ENABLE_ANALYTICS: false
+      REACT_APP_FIREBASE_API_KEY: AIzaSyAtRBR0rTzaPCNmW55yE96slcYvfdGkubE
+      REACT_APP_FIREBASE_AUTH_DOMAIN: freedevconnect.firebaseapp.com
+      REACT_APP_FIREBASE_PROJECT_ID: freedevconnect
+      REACT_APP_FIREBASE_APP_ID: 1:1012125400597:web:46ddeecfcfc3158a0ed81c
+      REACT_APP_FIREBASE_MEASUREMENT_ID: G-43G71K21Q0
+    depends_on:
+      - backend
+    networks:
+      - freedevconnect_network
+    volumes:
+      - ./freedevconnect-frontend:/app
+    command: npm start
+
+volumes:
+  mysql_data:
+
+networks:
+  freedevconnect_network:
+    driver: bridge

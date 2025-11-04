@@ -1,0 +1,438 @@
+/* ===================================
+   ACCESSIBILITYWIDGET.CSS
+   Styles pour le widget d'accessibilité
+   =================================== */
+
+/* Widget flottant */
+.accessibility-widget {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 9999;
+}
+
+/* Bouton principal du widget */
+.accessibility-toggle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accessibility-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.accessibility-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Panel d'options */
+.accessibility-panel {
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: 350px;
+  max-height: 600px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header du panel */
+.panel-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.panel-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.panel-close {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.panel-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Contenu du panel */
+.panel-content {
+  padding: 20px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+/* Groupes de paramètres */
+.setting-group {
+  margin-bottom: 24px;
+}
+
+.setting-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.setting-label i {
+  color: #667eea;
+}
+
+/* Boutons de paramètres */
+.setting-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.setting-buttons button {
+  flex: 1;
+  min-width: 70px;
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  background: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 13px;
+  font-weight: 500;
+  color: #4a5568;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.setting-buttons button:hover {
+  border-color: #667eea;
+  background: #f7fafc;
+}
+
+.setting-buttons button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Options à basculer */
+.toggle-setting {
+  margin-bottom: 16px;
+  padding: 14px;
+  background: #f7fafc;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.toggle-setting:hover {
+  background: #edf2f7;
+}
+
+.toggle-setting label {
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+  gap: 12px;
+}
+
+.toggle-setting input[type="checkbox"] {
+  margin-top: 3px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: #667eea;
+}
+
+.toggle-label {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.toggle-label i {
+  color: #667eea;
+  margin-right: 8px;
+}
+
+.toggle-label small {
+  color: #718096;
+  font-size: 12px;
+}
+
+/* Mode sourds - style spécial */
+.toggle-setting.deaf-mode {
+  border: 2px solid #f59e0b;
+  background: #fffbeb;
+}
+
+.toggle-setting.deaf-mode:hover {
+  background: #fef3c7;
+}
+
+.toggle-setting.deaf-mode .toggle-label i {
+  color: #f59e0b;
+}
+
+/* Info accessibilité */
+.accessibility-info {
+  background: #ebf4ff;
+  border-left: 4px solid #667eea;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.accessibility-info p {
+  margin: 0;
+  font-size: 13px;
+  color: #2d3748;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.accessibility-info i {
+  color: #667eea;
+}
+
+/* Bouton reset */
+.reset-button {
+  width: 100%;
+  padding: 12px;
+  background: #f56565;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.reset-button:hover {
+  background: #e53e3e;
+  box-shadow: 0 4px 12px rgba(245, 101, 101, 0.3);
+}
+
+.reset-button:active {
+  transform: scale(0.98);
+}
+
+/* ===================================
+   CLASSES APPLIQUÉES AU <html>
+   =================================== */
+
+/* Tailles de police */
+html.font-small {
+  font-size: 14px;
+}
+
+html.font-large {
+  font-size: 18px;
+}
+
+html.font-xlarge {
+  font-size: 20px;
+}
+
+/* Contraste élevé */
+html.high-contrast {
+  filter: contrast(1.5);
+}
+
+html.high-contrast * {
+  border-color: #000 !important;
+}
+
+/* Mode sombre */
+html.dark-mode {
+  background: #1a202c;
+  color: #e2e8f0;
+}
+
+html.dark-mode body {
+  background: #1a202c;
+  color: #e2e8f0;
+}
+
+html.dark-mode .accessibility-panel {
+  background: #2d3748;
+  color: #e2e8f0;
+}
+
+html.dark-mode .panel-content {
+  background: #2d3748;
+}
+
+html.dark-mode .setting-buttons button {
+  background: #4a5568;
+  color: #e2e8f0;
+  border-color: #4a5568;
+}
+
+html.dark-mode .setting-buttons button:hover {
+  background: #5a6778;
+}
+
+html.dark-mode .toggle-setting {
+  background: #4a5568;
+}
+
+html.dark-mode .toggle-setting:hover {
+  background: #5a6778;
+}
+
+/* Mode daltonisme */
+html.colorblind-mode {
+  filter: grayscale(0.3) contrast(1.2);
+}
+
+
+/* Animations réduites */
+html.reduced-motion * {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+}
+
+/* Focus renforcé */
+html.enhanced-focus *:focus {
+  outline: 3px solid #667eea !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3) !important;
+}
+
+/* Notifications visuelles (pour sourds) */
+html.visual-notifications .notification,
+html.visual-notifications .alert,
+html.visual-notifications .toast {
+  animation: flashBorder 0.5s ease-in-out 3;
+  border: 3px solid #f59e0b !important;
+}
+
+@keyframes flashBorder {
+  0%, 100% {
+    border-color: #f59e0b;
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+  }
+  50% {
+    border-color: #fbbf24;
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.8);
+  }
+}
+
+/* Flash visuel pour les notifications importantes */
+html.visual-notifications .important-notification::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(245, 158, 11, 0.2);
+  animation: flashScreen 0.3s ease-in-out 2;
+  pointer-events: none;
+  z-index: 9998;
+}
+
+@keyframes flashScreen {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ===================================
+   RESPONSIVE
+   =================================== */
+
+@media (max-width: 480px) {
+  .accessibility-panel {
+    width: calc(100vw - 40px);
+    right: -10px;
+  }
+
+  .accessibility-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .panel-content {
+    max-height: 400px;
+  }
+}
+
+/* Scrollbar personnalisée pour le panel */
+.panel-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.panel-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.panel-content::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 10px;
+}
+
+.panel-content::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #5568d3 0%, #65408b 100%);
+}

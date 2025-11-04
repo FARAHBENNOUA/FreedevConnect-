@@ -1,0 +1,123 @@
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: var(--transition);
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .btn-sm {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+  }
+  
+  .btn-lg {
+    padding: 12px 24px;
+    font-size: 1.125rem;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2980b9;
+  }
+  
+  .btn-secondary {
+    background-color: white;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+  }
+  
+  .btn-secondary:hover {
+    background-color: #f8f9fa;
+  }
+  
+  .btn-success {
+    background-color: var(--success-color);
+    color: white;
+  }
+  
+  .btn-success:hover {
+    background-color: #219653;
+  }
+  
+  .btn-danger {
+    background-color: var(--danger-color);
+    color: white;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c0392b;
+  }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 1px solid currentColor;
+  }
+  
+  .btn-outline-primary {
+    color: var(--primary-color);
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+  
+  .btn-block {
+    display: block;
+    width: 100%;
+  }
+  
+  .btn:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+  
+  .btn-link {
+    background: none;
+    color: var(--primary-color);
+    padding: 0;
+    font-weight: 500;
+    text-decoration: underline;
+  }
+  
+  .btn-link:hover {
+    color: #2980b9;
+    text-decoration: none;
+  } .btn-theme {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-theme:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+.btn-theme svg {
+  font-size: 24px;
+}
+
+/* Pour le mode sombre */
+.dark-mode .btn-theme {
+  color: white;
+}
+
+.light-mode .btn-theme {
+  color: black;
+}

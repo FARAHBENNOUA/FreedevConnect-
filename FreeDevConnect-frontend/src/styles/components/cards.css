@@ -1,0 +1,111 @@
+.card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    transition: var(--transition);
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    padding: 1.25rem;
+    border-bottom: 1px solid var(--border-color);
+    background-color: #fafafa;
+  }
+  
+  .card-header h2, .card-header h3 {
+    margin: 0;
+    font-weight: 600;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-footer {
+    padding: 1.25rem;
+    border-top: 1px solid var(--border-color);
+    background-color: #fafafa;
+  }
+  
+  .card-title {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .card-text {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .card-img {
+    width: 100%;
+    border-radius: calc(var(--border-radius) - 2px);
+  }
+  
+  .card-img-top {
+    width: 100%;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+  }
+  
+  .card-img-bottom {
+    width: 100%;
+    border-bottom-right-radius: var(--border-radius);
+    border-bottom-left-radius: var(--border-radius);
+  }
+  
+  .card-img-overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1.25rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+  }
+  
+  .card-group {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .card-group .card {
+    flex: 1 0 0%;
+    margin-right: 15px;
+  }
+  
+  .card-group .card:last-child {
+    margin-right: 0;
+  }
+  
+  
+  .proposal-card {
+  /* Style de base */
+  border: 1px solid #ccc;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 6px;
+  background-color: #fff;
+}
+
+.proposal-card.applied {
+  border-color: #4caf50;
+  background-color: #f0fff0;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #4caf50;
+  color: white;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+}
