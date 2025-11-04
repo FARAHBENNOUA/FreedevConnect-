@@ -1,4 +1,4 @@
-# FreedevConnect
+FreedevConnect
 
 FreedevConnect est une plateforme de mise en relation entre freelances et clients. Elle permet aux utilisateurs de s’inscrire, se connecter, et accéder à des fonctionnalités selon leur rôle : `freedev`, `client` ou `admin`.
 
@@ -35,4 +35,3 @@ Ce projet est sous licence MIT.
 
 ✨ Auteur
 Farah Bennoua — GitHub
-
